@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Ticket Payment</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            background: url('https://images.pexels.com/photos/1190298/pexels-photo-1190298.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') no-repeat center center/cover;
+            color: white;
+            padding: 20px;
+            position: relative;
+        }
+
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: -1;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            margin: auto;
+            color: black;
+        }
+
+        label {
+            font-size: 1.2em;
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+
+        select, input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            font-size: 1em;
+            border: 2px solid #ff4e50;
+            border-radius: 5px;
+        }
+
+        .total {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        .btn {
+            background: #0070ba;
+            color: white;
+            padding: 10px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 15px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #005ea6;
+        }
+
+        .paypal-logo {
+            width: 150px;
+            margin-top: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>🎟 Ticket Payment</h1>
+    <div class="container">
+        <label for="event">Select Event:</label>
+        <select id="event">
+            <option value="10">UNITED V – End of Term Student Party ($10)</option>
+            <option value="15">WEN Part I Orientation 2025 ($15)</option>
+            <option value="12">UOA – Welcome To NZ! Student Party ($12)</option>
+            <option value="8">AUT – Welcome to NZ! Launch Party ($8)</option>
+        </select>
+
+        <label for="quantity">Number of Tickets:</label>
+        <input type="number" id="quantity" value="1" min="1">
+
+        <div class="total">Total: $<span id="total-price">10</span></div>
+
+        <button class="btn" onclick="proceedToPayment()">Proceed</button>
+
+        <p>Email to send payment: <strong>shickstable@gmail.com</strong></p>
+
+        <a href="https://www.paypal.com/signin?returnUri=https%3A%2F%2Fwww.paypal.com%2Fmyaccount%2Fsummary&state=" target="_blank">
+            <button class="btn">Pay via PayPal</button>
+        </a>
+
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Paypal_2014_logo.png" alt="PayPal Logo" class="paypal-logo">
+        
+        <p class="note">Make sure to select "Friends and Family" when sending payment.</p>
+    </div>
+
+    <script>
+        function calculateTotal() {
+            let eventPrice = document.getElementById("event").value;
+            let quantity = document.getElementById("quantity").value;
+            let total = eventPrice * quantity;
+            document.getElementById("total-price").innerText = total;
+            return total;
+        }
+
+        function proceedToPayment() {
+            let totalAmount = calculateTotal();
+            alert("Your total amount is $" + totalAmount + ". Redirecting to payment page...");
+            window.location.href = "file:///C:/Users/HP/Desktop/New%20folder/index.html";
+        }
+
+        document.getElementById("event").addEventListener("change", calculateTotal);
+        document.getElementById("quantity").addEventListener("input", calculateTotal);
+    </script>
+</body>
+</html>

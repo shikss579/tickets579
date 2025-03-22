@@ -1,0 +1,154 @@
+
+/* General Page Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: url('https://img.freepik.com/free-vector/disco-background_1048-10077.jpg?t=st=1742619914~exp=1742623514~hmac=ab77a7ba05f070404f8bb3f8c1f147a2d948dfe62ab1324c055b462adeba840c&w=826') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Logo */
+.logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 150px;
+    height: auto;
+}
+
+/* Main Container */
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 25px;
+    background: rgba(0, 0, 0, 0.8); /* Darker transparency */
+    border-radius: 15px;
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+/* Headings */
+h1 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #ff4757;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+h2 {
+    font-size: 20px;
+    color: #ccc;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 24px;
+    color: #ff6b81;
+    text-transform: uppercase;
+}
+
+/* Ticket Section */
+.tickets {
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Individual Ticket Block */
+.ticket {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.ticket:last-child {
+    border-bottom: none;
+}
+
+/* Ticket Label */
+.ticket label {
+    font-size: 18px;
+    flex: 1;
+    text-align: left;
+    font-weight: bold;
+}
+
+/* Price */
+.ticket p {
+    font-size: 16px;
+    color: #ddd;
+    margin: 0 10px;
+}
+
+/* Ticket Quantity Input */
+.ticket input {
+    width: 60px;
+    padding: 7px;
+    text-align: center;
+    font-size: 18px;
+    border-radius: 5px;
+    border: none;
+    background: #333;
+    color: white;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+}
+
+/* Subtotal */
+.subtotal {
+    margin-top: 20px;
+    font-size: 22px;
+    font-weight: bold;
+    color: #ff4757;
+}
+
+/* Button */
+.btn {
+    display: inline-block;
+    padding: 14px 24px;
+    margin-top: 20px;
+    background: linear-gradient(135deg, #ff4757, #e94560);
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    background: linear-gradient(135deg, #e94560, #ff4757);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .container {
+        width: 90%;
+        padding: 20px;
+    }
+    
+    .ticket {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .ticket label, .ticket p {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+
+    .ticket input {
+        width: 100%;
+    }
+}
